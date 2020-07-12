@@ -1,4 +1,6 @@
-import java.io.BufferedReader;
+
+
+ import java.io.BufferedReader;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -255,7 +257,7 @@ public class PokerGame {
  		  Collections.sort(compareList2);
     		
     		 
-			if (score == 1 || score == 5 || score == 9 || score ==6 ) {
+			if (score == 1 || score == 5 || score == 9 || score ==6) {
 
 				if ((oneList.get(4) > twoList.get(4)) && (oneList.get(4) != twoList.get(4))) {
 					return 1;
@@ -295,35 +297,20 @@ public class PokerGame {
 
 			}
 
-			if (score == 2 || score == 4 || score == 8 || score ==6) {
-				/*considering that flush has all different cards*/
+			if (score == 2 || score ==4 || score ==8) {
 				
+				if(compareList1.get(0)  > compareList2.get(0)) {
+					return 1;
+				}else if (compareList2.get(0)  > compareList1.get(0)) {
+					return 0;
+				}
 				
-
-//				if (score == 6 && compareList1.size() == 1 && compareList2.size() == 1) {
-//					if (compareList1.get(0) > compareList2.get(0)) {
-//						return 1;
-//					} else if (compareList2.get(0) > compareList1.get(0)) {
-//						return 0;
-//					}
-//				} else if (compareList1.size() > compareList2.size()) {
-//					return 1;
-//				} else if (compareList2.size() > compareList1.size()) {
-//					return 1;
-//				}
-//
-//				if (compareList1.get(0) > compareList2.get(0)) {
-//					return 1;
-//				} else if (compareList2.get(0) > compareList1.get(0)) {
-//					return 0;
-//				}
-
-				if (score == 2) {
-
-					if ((newList1.get(3) > newList2.get(3)) && (newList1.get(3) != newList2.get(3))) {
-						return 1;
-					} else if ((newList2.get(3) > newList1.get(3)) && (newList1.get(3) != newList2.get(3))) {
-						return 0;
+				if(score ==2) {
+	  		  
+				if ((newList1.get(3) > newList2.get(3)) && (newList1.get(3) != newList2.get(3))) {
+					return 1;
+				} else if ((newList2.get(3) > newList1.get(3)) && (newList1.get(3) != newList2.get(3))) {
+					return 0;
 				} else if ((newList1.get(2) > twoList.get(2)) && (newList1.get(3) == newList2.get(3))) {
 					return 1;
 				} else if ((newList2.get(2) > newList1.get(2)) && (newList1.get(3) == newList2.get(3))) {
@@ -386,44 +373,6 @@ public class PokerGame {
 
 
 			if (score == 3 || score ==7 ) {
-				
-				
-				
-				
-//				if((compareList1.size() == 2 && compareList2.size() == 2 )&& score ==6) {
-//					
-//					
-//					if((compareList1.get(0) == compareList1.get(1))&&((compareList2.get(0)==compareList2.get(1)))) {
-//						
-//						
-//						if (compareList1.get(1) > compareList2.get(1)) {
-//							return 1;
-//						} else if (compareList2.get(1) > compareList1.get(1)) {
-//							return 0;
-//						}
-//						
-//						
-//						
-//					}else if (compareList1.get(1) > compareList2.get(1)) {
-//						return 1;
-//					} else if (compareList2.get(1) > compareList1.get(1)) {
-//						return 0;
-//					} else if ((compareList1.get(0) > compareList2.get(0))
-//							&& (compareList2.get(1) == compareList1.get(1))) {
-//						return 1;
-//					} else if ((compareList2.get(0) > compareList1.get(0))
-//							&& (compareList2.get(1) == compareList1.get(1))) {
-//						return 0;
-//					}
-//					
-//					
-//					
-//					
-//				}else if (compareList1.size() >compareList2.size()) {
-//					return 1;
-//				}else return 0;
-				
-				
 				if (compareList1.get(1) > compareList2.get(1)) {
 					return 1;
 				} else if (compareList2.get(1) > compareList1.get(1)) {
@@ -472,9 +421,6 @@ public class PokerGame {
 					
 				}
 			
-			
-			
-			
 		
 
 			
@@ -485,5 +431,3 @@ public class PokerGame {
 		}
 }   
         
-
-
