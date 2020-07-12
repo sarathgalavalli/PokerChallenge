@@ -258,6 +258,7 @@ public class PokerGame {
     		
     		 
 			if (score == 1 || score == 5 || score == 9 || score ==6) {
+				/*considering flush has all 5 different cards*/
 
 				if ((oneList.get(4) > twoList.get(4)) && (oneList.get(4) != twoList.get(4))) {
 					return 1;
