@@ -1,5 +1,5 @@
 # PokerChallenge
-A challenge given by ICM consulting as a first round of qualification for java developer position
+
 A poker hand consists of a combination of five playing cards, ranked in the following ascending order (lowest to highest):
 
 Description
