@@ -21,3 +21,6 @@ When multiple players have the same ranked hand then the rank made up of the hig
 If two ranks tie, for example, if both players have a pair of Jacks, then highest cards in each hand are compared; if the highest cards tie then the next highest cards are compared, and so on.
 
 Note - suits are not taken into account to break a tie for this exercise - only the value of the card determines a winner. Thus as a result when we have test data "we will not be able to declare a winner for a FLUSH".
+
+
+To run this program just clone the program to your local directory and run as java application in terminal.
