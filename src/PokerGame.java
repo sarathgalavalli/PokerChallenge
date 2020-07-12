@@ -255,7 +255,7 @@ public class PokerGame {
  		  Collections.sort(compareList2);
     		
     		 
-			if ((score == 1 || score == 5 || score == 9 || score ==6 )&& (compareList1.size() == 0 && compareList2.size()== 0)) {
+			if (score == 1 || score == 5 || score == 9 || score ==6 ) {
 
 				if ((oneList.get(4) > twoList.get(4)) && (oneList.get(4) != twoList.get(4))) {
 					return 1;
