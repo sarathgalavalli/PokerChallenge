@@ -118,115 +118,80 @@ public class PokerGame {
      
             return 1;
         }
-       
+        
+        
+        
+        private static ArrayList<Integer> getList (final String[] player) {
+        	ArrayList<Integer> list = new ArrayList<Integer>();
+        	
+        	for (String card : player) {
+    			if(card.charAt(0) == 'T')
+    			{
+    				list.add(10); 
+    			}else if (card.charAt(0) == 'J')
+    			{
+    				list.add(11); 
+    			}else if (card.charAt(0) == 'Q')
+    			{
+    				list.add(12); 
+    			}else if (card.charAt(0) == 'K')
+    			{
+    				list.add(13); 
+    			}
+    			else if (card.charAt(0) == 'A')
+    			{
+    				list.add(14); 
+    			}
+    			else if (card.charAt(0) == '9')
+    			{
+    				list.add(9); 
+    			}else if (card.charAt(0) == '8')
+    			{
+    				list.add(8); 
+    			}else if (card.charAt(0) == '7')
+    			{
+    				list.add(7); 
+    			}
+    			else if (card.charAt(0) == '6')
+    			{
+    				list.add(6); 
+    			}
+    			else if (card.charAt(0) == '5')
+    			{
+    				list.add(5); 
+    			}else if (card.charAt(0) == '4')
+    			{
+    				list.add(4); 
+    			}else if (card.charAt(0) == '3')
+    			{
+    				list.add(3); 
+    			}
+    			else if (card.charAt(0) == '2')
+    			{
+    				list.add(2); 
+    			}
+        	}
+        	
+			return list;
+        	
+        }
+        
         private static int tieBreaker(final String[] player1, final String[] player2, final int score) {
         	
         	ArrayList<Integer> oneList = new ArrayList<Integer>();
     		ArrayList<Integer> twoList = new ArrayList<Integer>();
-    		for (String card : player1) {
-    			if(card.charAt(0) == 'T')
-    			{
-    				 oneList.add(10); 
-    			}else if (card.charAt(0) == 'J')
-    			{
-    				oneList.add(11); 
-    			}else if (card.charAt(0) == 'Q')
-    			{
-    				oneList.add(12); 
-    			}else if (card.charAt(0) == 'K')
-    			{
-    				oneList.add(13); 
-    			}
-    			else if (card.charAt(0) == 'A')
-    			{
-    				oneList.add(14); 
-    			}
-    			else if (card.charAt(0) == '9')
-    			{
-    				oneList.add(9); 
-    			}else if (card.charAt(0) == '8')
-    			{
-    				oneList.add(8); 
-    			}else if (card.charAt(0) == '7')
-    			{
-    				oneList.add(7); 
-    			}
-    			else if (card.charAt(0) == '6')
-    			{
-    				oneList.add(6); 
-    			}
-    			else if (card.charAt(0) == '5')
-    			{
-    				oneList.add(5); 
-    			}else if (card.charAt(0) == '4')
-    			{
-    				oneList.add(4); 
-    			}else if (card.charAt(0) == '3')
-    			{
-    				oneList.add(3); 
-    			}
-    			else if (card.charAt(0) == '2')
-    			{
-    				oneList.add(2); 
-    			}
-//    			}else {
-//    				oneList.add((int)card.charAt(0));
-//    				//System.out.println((int)card.charAt(0));
-//    			}
-            }
-    		for (String card : player2) {
-    			if(card.charAt(0) == 'T')
-    			{
-    				twoList.add(10); 
-    			}else if (card.charAt(0) == 'J')
-    			{
-    				twoList.add(11); 
-    			}else if (card.charAt(0) == 'Q')
-    			{
-    				twoList.add(12); 
-    			}else if (card.charAt(0) == 'K')
-    			{
-    				twoList.add(13); 
-    			}
-    			else if (card.charAt(0) == 'A')
-    			{
-    				twoList.add(14); 
-    			}else if (card.charAt(0) == '9')
-    			{
-    				twoList.add(9); 
-    			}else if (card.charAt(0) == '8')
-    			{
-    				twoList.add(8); 
-    			}else if (card.charAt(0) == '7')
-    			{
-    				twoList.add(7); 
-    			}
-    			else if (card.charAt(0) == '6')
-    			{
-    				twoList.add(6); 
-    			}
-    			else if (card.charAt(0) == '5')
-    			{
-    				twoList.add(5); 
-    			}else if (card.charAt(0) == '4')
-    			{
-    				twoList.add(4); 
-    			}else if (card.charAt(0) == '3')
-    			{
-    				twoList.add(3); 
-    			}
-    			else if (card.charAt(0) == '2')
-    			{
-    				twoList.add(2); 
-    			}
-            }
+    		
+    		
+    		oneList = getList(player1);
+    		twoList = getList(player2);
+   		
     		Collections.sort(oneList);
     		Collections.sort(twoList);
     		
     		ArrayList<Integer> newList1 = new ArrayList<Integer>(); 
    		    ArrayList<Integer> newList2 = new ArrayList<Integer>(); 
    		    
-   		 ArrayList<Integer> compareList1 = new ArrayList<Integer>(); 
+   		    ArrayList<Integer> compareList1 = new ArrayList<Integer>(); 
 		    ArrayList<Integer> compareList2 = new ArrayList<Integer>(); 
 	        
 	        for (int element : oneList) { 
@@ -262,36 +227,23 @@ public class PokerGame {
 
 				if ((oneList.get(4) > twoList.get(4)) && (oneList.get(4) != twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(4) > oneList.get(4)) && (oneList.get(4) != twoList.get(4))) {
-					return 0;
+				
 				} else if ((oneList.get(3) > twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(3) > oneList.get(3)) && (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				} else if ((oneList.get(2) > twoList.get(2)) && (oneList.get(3) == twoList.get(3))
+				}  else if ((oneList.get(2) > twoList.get(2)) && (oneList.get(3) == twoList.get(3))
 						&& (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(2) > oneList.get(2)) && (oneList.get(3) == twoList.get(3))
-						&& (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				}
+				} 
 
 				else if ((oneList.get(1) > twoList.get(1)) && (oneList.get(2) == twoList.get(2))
 						&& (oneList.get(3) == twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(1) > oneList.get(1)) && (oneList.get(2) == twoList.get(2))
-						&& (oneList.get(3) == twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				}
+				} 
 
 				else if ((oneList.get(0) > twoList.get(0)) && (oneList.get(1) == twoList.get(1))
 						&& (oneList.get(2) == twoList.get(2)) && (oneList.get(3) == twoList.get(3))
 						&& (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(0) > oneList.get(0)) && (oneList.get(1) == twoList.get(1))
-						&& (oneList.get(2) == twoList.get(2)) && (oneList.get(3) == twoList.get(3))
-						&& (oneList.get(4) == twoList.get(4))) {
-					return 0;
 				} else 
 					return 0;
 				
@@ -310,21 +262,14 @@ public class PokerGame {
 	  		  
 				if ((newList1.get(3) > newList2.get(3)) && (newList1.get(3) != newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(3) > newList1.get(3)) && (newList1.get(3) != newList2.get(3))) {
-					return 0;
-				} else if ((newList1.get(2) > twoList.get(2)) && (newList1.get(3) == newList2.get(3))) {
+				}  else if ((newList1.get(2) > twoList.get(2)) && (newList1.get(3) == newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(2) > newList1.get(2)) && (newList1.get(3) == newList2.get(3))) {
-					return 0;
 				}
 
 				else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))
 						&& (newList1.get(3) == newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))
-						&& (newList1.get(3) == newList2.get(3))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 						&& (newList1.get(2) == newList2.get(2)) && (newList1.get(3) == newList2.get(3))) {
@@ -341,11 +286,7 @@ public class PokerGame {
 					else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))
 							) {
 						return 1;
-					} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))
-							) {
-						return 0;
-					}
-
+					} 
 					else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 							&& (newList1.get(2) == newList2.get(2)) ) {
 						return 1;
@@ -355,12 +296,7 @@ public class PokerGame {
 						if ((newList1.get(1) > newList2.get(1)) 
 								) {
 							return 1;
-						} else if ((newList2.get(1) > newList1.get(1)) 
-								) {
-							return 0;
-						}
-
-						else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
+						} else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 								 ) {
 							return 1;
 						} else
@@ -391,15 +327,11 @@ public class PokerGame {
 				if(score ==3 ) {
 				if ((newList1.get(2) > twoList.get(2))) {
 					return 1;
-				} else if ((newList2.get(2) > newList1.get(2))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))) {
 					return 1;
-				} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 						&& (newList1.get(2) == newList2.get(2))) {
@@ -428,7 +360,7 @@ public class PokerGame {
 			
 			
 			
-			return 0;   //  6 
+			return 0;  
 		}
 }   
         
