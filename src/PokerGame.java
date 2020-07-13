@@ -262,36 +262,23 @@ public class PokerGame {
 
 				if ((oneList.get(4) > twoList.get(4)) && (oneList.get(4) != twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(4) > oneList.get(4)) && (oneList.get(4) != twoList.get(4))) {
-					return 0;
+				
 				} else if ((oneList.get(3) > twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(3) > oneList.get(3)) && (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				} else if ((oneList.get(2) > twoList.get(2)) && (oneList.get(3) == twoList.get(3))
+				}  else if ((oneList.get(2) > twoList.get(2)) && (oneList.get(3) == twoList.get(3))
 						&& (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(2) > oneList.get(2)) && (oneList.get(3) == twoList.get(3))
-						&& (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				}
+				} 
 
 				else if ((oneList.get(1) > twoList.get(1)) && (oneList.get(2) == twoList.get(2))
 						&& (oneList.get(3) == twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(1) > oneList.get(1)) && (oneList.get(2) == twoList.get(2))
-						&& (oneList.get(3) == twoList.get(3)) && (oneList.get(4) == twoList.get(4))) {
-					return 0;
-				}
+				} 
 
 				else if ((oneList.get(0) > twoList.get(0)) && (oneList.get(1) == twoList.get(1))
 						&& (oneList.get(2) == twoList.get(2)) && (oneList.get(3) == twoList.get(3))
 						&& (oneList.get(4) == twoList.get(4))) {
 					return 1;
-				} else if ((twoList.get(0) > oneList.get(0)) && (oneList.get(1) == twoList.get(1))
-						&& (oneList.get(2) == twoList.get(2)) && (oneList.get(3) == twoList.get(3))
-						&& (oneList.get(4) == twoList.get(4))) {
-					return 0;
 				} else 
 					return 0;
 				
@@ -310,21 +297,14 @@ public class PokerGame {
 	  		  
 				if ((newList1.get(3) > newList2.get(3)) && (newList1.get(3) != newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(3) > newList1.get(3)) && (newList1.get(3) != newList2.get(3))) {
-					return 0;
-				} else if ((newList1.get(2) > twoList.get(2)) && (newList1.get(3) == newList2.get(3))) {
+				}  else if ((newList1.get(2) > twoList.get(2)) && (newList1.get(3) == newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(2) > newList1.get(2)) && (newList1.get(3) == newList2.get(3))) {
-					return 0;
 				}
 
 				else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))
 						&& (newList1.get(3) == newList2.get(3))) {
 					return 1;
-				} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))
-						&& (newList1.get(3) == newList2.get(3))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 						&& (newList1.get(2) == newList2.get(2)) && (newList1.get(3) == newList2.get(3))) {
@@ -341,11 +321,7 @@ public class PokerGame {
 					else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))
 							) {
 						return 1;
-					} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))
-							) {
-						return 0;
-					}
-
+					} 
 					else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 							&& (newList1.get(2) == newList2.get(2)) ) {
 						return 1;
@@ -355,12 +331,7 @@ public class PokerGame {
 						if ((newList1.get(1) > newList2.get(1)) 
 								) {
 							return 1;
-						} else if ((newList2.get(1) > newList1.get(1)) 
-								) {
-							return 0;
-						}
-
-						else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
+						} else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 								 ) {
 							return 1;
 						} else
@@ -391,15 +362,11 @@ public class PokerGame {
 				if(score ==3 ) {
 				if ((newList1.get(2) > twoList.get(2))) {
 					return 1;
-				} else if ((newList2.get(2) > newList1.get(2))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(1) > newList2.get(1)) && (newList1.get(2) == newList2.get(2))) {
 					return 1;
-				} else if ((newList2.get(1) > newList1.get(1)) && (newList1.get(2) == newList2.get(2))) {
-					return 0;
-				}
+				} 
 
 				else if ((newList1.get(0) > newList2.get(0)) && (newList1.get(1) == newList2.get(1))
 						&& (newList1.get(2) == newList2.get(2))) {
@@ -428,7 +395,7 @@ public class PokerGame {
 			
 			
 			
-			return 0;   //  6 
+			return 0;  
 		}
 }   
         
